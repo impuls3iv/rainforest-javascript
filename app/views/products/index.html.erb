@@ -1,0 +1,19 @@
+<h1 id="main-title">All Products</h1>
+
+<% @products.each do |f| %>
+
+  <p class="mainshow"><%= f.name %></p>
+
+  <p class="mainshow"><%= f.description %></p>
+
+  <p class="mainshow">$<%= f.formatted_price %></p>
+
+  <p class="links"><%= link_to 'Edit', edit_product_path(f) %> | <%= link_to 'Delete', product_path(f), method: :delete %></p>
+<br>
+<br>
+<% end %>
+
+<br>
+<br>
+<br>
+<%= link_to 'Add New Product', new_product_path %>
